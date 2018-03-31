@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Noddle.Web</title>
+    <title>@ViewData["Title"] - Noddle</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootswatch/dist/superhero/bootstrap.css" />
@@ -35,17 +35,6 @@
           <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-basket fa-5x"></i><span class="icon-label">ERRANDS</span></a></li>
           <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-map-signs fa-5x"></i><span class="icon-label">STEPS</span></a></li>
           <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-camera-retro fa-5x"></i><span class="icon-label">PHOTOS</span></a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item">Action</a>
-            <a class="dropdown-item">Another action</a>
-            <a class="dropdown-item">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item">Separated link</a>
-            <a class="dropdown-item">One more separated link</a>
-          </div>
-        </li>
       </ul>
     </div>
   </nav>
@@ -61,6 +50,7 @@
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/station-clock.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment exclude="Development">
@@ -76,7 +66,9 @@
                 crossorigin="anonymous"
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
+        <script src="~/js/station-clock.js"></script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
+
     </environment>
 
     @RenderSection("Scripts", required: false)

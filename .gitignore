@@ -33,4 +33,39 @@ msbuild.wrn
 .vs/
 
 # Bower
-**/wwwroot/lib
+# bootstrap (using bootswatch)
+**/wwwroot/lib/bootstrap/**
+
+# jquery
+**/wwwroot/lib/jquery/*
+!**/wwwroot/lib/jquery/dist/
+**/wwwroot/lib/jquery/dist/*
+!**/wwwroot/lib/jquery/dist/*.min.*
+
+# jquery-validation
+**/wwwroot/lib/jquery-validation/*
+!**/wwwroot/lib/jquery-validation/dist/
+**/wwwroot/lib/jquery-validation/dist/*
+!**/wwwroot/lib/jquery-validation/dist/*.min.js
+
+# jquery-validate-unobtrusive
+**/wwwroot/lib/jquery-validation-unobtrusive/*
+!**/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js
+
+# bootswatch
+**/wwwroot/lib/bootswatch/*
+!**/wwwroot/lib/bootswatch/dist/
+**/wwwroot/lib/bootswatch/dist/*
+!**/wwwroot/lib/bootswatch/dist/*/
+**/wwwroot/lib/bootswatch/dist/*/*
+!**/wwwroot/lib/bootswatch/dist/*/bootstrap.min.css
+
+# fontawesome
+**/wwwroot/lib/fontawesome/*
+!**/wwwroot/lib/fontawesome/web-fonts-with-css/
+**/wwwroot/lib/fontawesome/web-fonts-with-css/*
+!**/wwwroot/lib/fontawesome/web-fonts-with-css/css/
+**/wwwroot/lib/fontawesome/web-fonts-with-css/css/*
+!**/wwwroot/lib/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css
+
+
