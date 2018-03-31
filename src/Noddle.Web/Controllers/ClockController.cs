@@ -10,23 +10,16 @@ namespace Noddle.Web.Controllers
 {
     public class ClockController : Controller
     {
-        public IActionResult View1()
+        private readonly IRotator _rotator;
+        public ClockController(IRotator rotator)
         {
-            return View();
+            _rotator = rotator ?? throw new ArgumentNullException(nameof(rotator));
         }
 
-        public IActionResult View2()
+        public IActionResult Display()
         {
-            return View();
-        }
+            ViewData["NextUrl"] = _rotator.Next("Clock", "Display");
 
-        public IActionResult View3()
-        {
-            return View();
-        }
-
-        public IActionResult View4()
-        {
             return View();
         }
     }
