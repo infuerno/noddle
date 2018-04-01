@@ -1,22 +1,20 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Noddle</title>
 
     <environment include="Development">
+        <script defer src="~/lib/fontawesome/svg-with-js/js/fontawesome-all.js"></script>
         <link rel="stylesheet" href="~/lib/bootswatch/dist/superhero/bootstrap.css" />
-        <link rel="stylesheet" href="~/lib/fontawesome/web-fonts-with-css/css/fontawesome-all.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/superhero/bootstrap.min.css"
               asp-fallback-href="~/lib/bootswatch/dist/superhero/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css"
-            asp-fallback-href="~/lib/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css"
-            asp-fallback-test-class="fa" asp-fallback-test-property="font-weight" asp-fallback-test-value="900" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
@@ -39,11 +37,11 @@
     </div>
   </nav>
     <div class="container body-content" id="body-content">
+        @await Html.PartialAsync("_Rotator")
         @RenderBody()
         <hr />
-        <footer>
-            @await Html.PartialAsync("_Rotator")
-            <p>&copy; 2018 - Noddle - Digital Life Organiser - Brain in a Box</p>
+        <footer class="text-center">
+            <p>&copy; @DateTime.Now.Year - Noddle - Digital Life Organiser - Brain in a Box</p>
        </footer>
     </div>
 

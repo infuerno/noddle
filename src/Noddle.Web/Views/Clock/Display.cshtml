@@ -2,13 +2,18 @@
 @{
     ViewData["Title"] = "Clock::Display";
 }
-<h1>Clock</h1>
 
-<canvas id="clock" width="500" height="500">
-	Your browser is unfortunately not supported.
-</canvas>
-<div class="float-right text-center" height="500">
-	<div class="display-1">Saturday</div>
-	<div class="display-1">31st March</div>
-	<div class="display-1">2018</div>
+<div class="row">
+    <div class="col-sm-6">
+		<canvas id="clock" width="500" height="500">
+			Your browser is unfortunately not supported. Please upgrade.
+		</canvas>
+	</div>
+	<div class="col-sm-6 parent text-center">
+		<div class="child">
+			<div class="display-1">@DateTime.Now.DayOfWeek</div>
+			<div class="display-1">@DateTime.Now.ToString("d MMMM")</div>
+			<div class="display-1">@DateTime.Now.Year</div>
+		</div>
+	</div>
 </div>

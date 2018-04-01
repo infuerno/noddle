@@ -1,3 +1,18 @@
-
-<div>Next: <a id="next-url" href="@Url.Content(ViewData["NextUrl"]?.ToString())">@Url.Content(ViewData["NextUrl"]?.ToString())</a></div>
-<div>In: <span id="rotator-countdown"></span>s</div>
+@{
+	var nextUrl = Url.Content(ViewData["NextUrl"]?.ToString());
+}
+<div class="row justify-content-end">
+	<div id="paused-info-text" class="col-sm-auto text-info invisible">PAUSED</div>
+	<div class="col-sm-auto text-muted">
+		<a href="#" id="play-pause"><i class="fas fa-pause fa-2x" data-fa-transform="shrink-2"></i></a>&nbsp;&nbsp;
+		<a href="#"><i class="fas fa-forward fa-2x"></i></a>
+	</div>
+</div>
+<div class="row justify-content-end">
+	<div class="col-sm-auto">
+		<span class="text-muted">showing&nbsp;</span>
+		<span><a href="@nextUrl">@nextUrl</a>&nbsp;</span>
+		<span class="text-muted">in&nbsp;</span>
+		<span id="rotator-countdown"></span>s
+	</div>
+</div>

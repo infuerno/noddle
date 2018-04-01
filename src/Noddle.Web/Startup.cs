@@ -46,7 +46,7 @@ namespace Noddle.Web
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Clock}/{action=Display}/{id?}");
             });
         }
     }
