@@ -1,0 +1,14 @@
+<div class="col-sm-6">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <span class="text-muted">Signed in as </span>@User.Identity.Name<span>&nbsp;</span>
+        <a href="@Url.Action("SignOut", "Account")">
+            <i class="fas fa-sign-out-alt"></i>
+        </a>
+    }
+    else
+    {
+        @Html.ActionLink("Sign in with Google", "ExternalLogin", "Account")
+    }
+</div>
+

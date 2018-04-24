@@ -68,4 +68,9 @@ msbuild.wrn
 **/wwwroot/lib/fontawesome/web-fonts-with-css/css/*
 !**/wwwroot/lib/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css
 
+certificate.pem
+csr.csr
+key.pem
+localhost.pfx
+
 

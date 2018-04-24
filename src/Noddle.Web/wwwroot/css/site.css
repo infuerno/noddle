@@ -61,7 +61,9 @@
 .nav-item { border-bottom: 2px solid white; height: 118px; }
 .icon-label { display: block; }
 .navbar {padding : .5rem 0rem;}
-.fas, .far {height: 100px;}
+
+/* only required for svg version of font-awesome */
+/* .fas, .far {height: 100px;} */
 
 .parent {
   position: relative;
@@ -74,7 +76,9 @@
   transform: translateY(-50%);
 }
 
-.paused-info-text {
-  font-size: 1.1em;
-  padding-top: 15px;
+#paused-info-text {
+  font-size: 1.4em;
+  padding-right: 5px;
+  vertical-align: text-bottom;
+  letter-spacing: 10px;
 }
