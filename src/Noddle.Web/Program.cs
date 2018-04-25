@@ -18,17 +18,29 @@ namespace Noddle.Web
             BuildWebHost(args).Run();
         }
 
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
+        public static IWebHost BuildWebHost(string[] args)
+        {
+            IHostingEnvironment hostingEnvironment = null;
+            return WebHost.CreateDefaultBuilder(args)
+                // get hosting environment
+                // and only add kestrel options for development
+                // see https://github.com/aspnet/KestrelHttpServer/issues/1334
+                .ConfigureAppConfiguration((hostingContext, config) => {
+                    hostingEnvironment = hostingContext.HostingEnvironment;
+                })
                 .UseKestrel(options =>
                 {
-                    options.Listen(IPAddress.Loopback, 5000);
-                    options.Listen(IPAddress.Loopback, 5001, listenOptions =>
+                    if (hostingEnvironment.IsDevelopment())
                     {
-                        listenOptions.UseHttps("localhost.pfx", "extra");
-                    });
+                        options.Listen(IPAddress.Loopback, 5000);
+                        options.Listen(IPAddress.Loopback, 5001, listenOptions =>
+                        {
+                            listenOptions.UseHttps("localhost.pfx", "extra");
+                        });
+                    }
                 })
+                .UseStartup<Startup>()
                 .Build();
+        }
     }
 }
